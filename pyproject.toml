@@ -1,0 +1,13 @@
+[project]
+name = "medsync"
+version = "1.0.0"
+description = "Gerenciador de medicamentos para auxilio social."
+authors = [{name = "Arthur"}]
+dependencies = ["pytest", "ruff"]
+
+[tool.pytest.ini_options]
+pythonpath = "."
+testpaths = ["src/testes"]
+
+[tool.ruff]
+line-length = 88
