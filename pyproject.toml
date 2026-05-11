@@ -3,7 +3,12 @@ name = "medsync"
 version = "1.0.0"
 description = "Gerenciador de medicamentos para auxilio social."
 authors = [{name = "Arthur"}]
-dependencies = ["pytest", "ruff","requests"]
+dependencies dependencies = [
+    "pytest",
+    "ruff",
+    "requests",
+    "streamlit"
+]
 
 [tool.pytest.ini_options]
 pythonpath = "."
