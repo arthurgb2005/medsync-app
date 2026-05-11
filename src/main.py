@@ -1,8 +1,8 @@
 import streamlit as st
 import requests
 
-# Funções de lógica
 def buscar_cep(cep):
+    """Busca o endereço através do CEP usando a API ViaCEP."""
     cep = cep.replace("-", "").replace(" ", "")
     if len(cep) != 8:
         return None
@@ -11,15 +11,15 @@ def buscar_cep(cep):
         response = requests.get(url, timeout=5)
         if response.status_code == 200:
             dados = response.json()
-            return f"{dados.get('logradouro')}, {dados.get('localidade')}" if "erro" not in dados else None
-    except:
+            if "erro" in dados:
+                return None
+            return f"{dados.get('logradouro')}, {dados.get('localidade')}"
+    except requests.exceptions.RequestException:
         return None
     return None
 
-# Interface Web (Streamlit)
 st.title("💊 MedSync - Controle de Medicamentos")
 
-# Parte da API (Requisito Etapa 2)
 st.subheader("📍 Localizar Farmácia")
 cep_input = st.text_input("Digite seu CEP para achar o endereço:")
 if st.button("Buscar Endereço"):
@@ -29,7 +29,6 @@ if st.button("Buscar Endereço"):
     else:
         st.error("CEP não encontrado.")
 
-# Parte do Cadastro
 st.subheader("📝 Cadastrar Remédio")
 nome = st.text_input("Nome do Medicamento:")
 dose = st.text_input("Dosagem (ex: 500mg):")
