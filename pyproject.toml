@@ -1,13 +1,17 @@
 [project]
-name = "medsync"
-version = "1.0.0"
-description = "Gerenciador de medicamentos para auxilio social."
-authors = [{name = "Arthur"}]
-dependencies = ["pytest", "ruff", "requests", "streamlit", "supabase"]
-
-[tool.pytest.ini_options]
-pythonpath = "."
-testpaths = ["src/testes"]
+name = "medsync-app"
+version = "0.1.0"
+description = "Gerenciador de medicamentos para auxilio social"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pytest",
+    "ruff",
+    "requests",
+    "streamlit",
+    "supabase"
+]
 
 [tool.ruff]
 line-length = 88
+select = ["E", "F", "W", "I"]
