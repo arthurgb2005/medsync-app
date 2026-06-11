@@ -1,6 +1,6 @@
 # MedSync App ✅
 
-**Autor:** Arthur  
+**Autor:** Arthur Gabriel da Silva Barbosa  
 **Versão:** 1.0.0  
 **Problema:** Dificuldade de idosos e cuidadores em organizar estoques de medicamentos.  
 **Solução:** Uma interface CLI simples para cadastrar e listar remédios.
